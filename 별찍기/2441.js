@@ -1,20 +1,11 @@
-const readline = require('readline');
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+let fs = require('fs');
+let n = fs.readFileSync('/dev/stdin').toString().split(' ')[0];
 
-rl.on('line', function (line) {
-  const num = line;
+for (let i = 0; i < n; i++) {
   let star = '';
-  let blank = '';
-  for (let i = 0; i <= num - 1; i++) {
-    for (let j = 1; j <= num - i; j++) {
-      process.stdout.write('*');
-    }
-    console.log();
-  }
-  rl.close();
-}).on('close', function () {
-  process.exit();
-});
+
+  for (let j = 0; j < i; j++) star += ' ';
+  for (let j = 0; j < n - i; j++) star += '*';
+
+  console.log(star);
+}
