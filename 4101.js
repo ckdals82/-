@@ -1,20 +1,20 @@
-const fs = require('fs');
-const input = fs.readFileSync('stdin.txt').toString().trim().split('\n');
+const input = require('fs')
+  .readFileSync('stdin.txt')
+  .toString()
+  .trim()
+  .split('\n');
 
-// let con = input;
 console.log(input);
 
-input.forEach((element) =>
-  // console.log(parseInt(element))
-  console.log(parseInt(element.split(' ')))
-);
+let sum = '';
 
-let a = input[0];
-let b = input[1];
+for (i = 0; i < input.length; i++) {
+  if (input[i] === '0 0') break;
 
-// while
-// if (a > b) {
-//   console.log('YES');
-// } else if (a < b) {
-//   console.log('NO');
-// }
+  let number = input[i].split(' ').map(Number);
+  console.log(number);
+
+  sum += number[0] > number[1] ? 'Yes\n' : 'No\n';
+  console.log(sum);
+}
+console.log(sum);
