@@ -1,16 +1,9 @@
-const [...input] = require('fs')
-  .readFileSync('stdin.txt')
+let [N, M] = require('fs')
+  .readFileSync('/dev/stdin')
   .toString()
-  .trim()
-  .split('\n')
+  .split(' ')
   .map(Number);
 
-// console.log(input);
+let min = Math.min(N, M);
 
-let sum = 0;
-// console.log(input.length);
-for (i = 0; i < input.length - 1; i++) {
-  sum += input[i];
-}
-
-console.log(sum);
+console.log(Math.floor(min / 2));
