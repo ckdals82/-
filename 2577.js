@@ -10,4 +10,4 @@ let result = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 for (i = 0; i < total.length; i++) {
   result[total[i]] += 1;
 }
-console.log(result.join());
+console.log(result.join('\n'));
