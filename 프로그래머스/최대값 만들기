@@ -1,0 +1,13 @@
+function solution(numbers) {
+  const answerArray = [];
+
+  for (i = 1; i <= 2; i++) {
+    let max = Math.max(...numbers);
+    console.log(max);
+    const ExcludeIndexNumber = numbers.indexOf(max);
+    console.log(ExcludeIndexNumber);
+    const exclude = numbers.splice(ExcludeIndexNumber, 1);
+    answerArray.push(max);
+  }
+  return answerArray[0] * answerArray[1];
+}
